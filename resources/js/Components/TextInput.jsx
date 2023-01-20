@@ -1,20 +1,20 @@
 import React, { useEffect, useRef } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import "../../css/input.css";
 
 TextInput.propTypes = {
-    type: propTypes.oneOf(["text", "email", "password", "number", "file"]),
-    name: propTypes.string,
-    value: propTypes.oneOfType([propTypes.string, propTypes.string]),
-    defaultValue: propTypes.oneOfType([propTypes.string, propTypes.string]),
-    className: propTypes.string,
-    variant: propTypes.oneOf(["primary", "error", "primary-outline"]),
-    autoComplete: propTypes.string,
-    required: propTypes.bool,
-    isFocused: propTypes.bool,
-    handleChange: propTypes.func,
-    placeholder: propTypes.string,
-    isError: propTypes.bool,
+    type: PropTypes.oneOf(["text", "email", "password", "number", "file"]),
+    name: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.string]),
+    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.string]),
+    className: PropTypes.string,
+    variant: PropTypes.oneOf(["primary", "error", "primary-outline"]),
+    autoComplete: PropTypes.string,
+    required: PropTypes.bool,
+    isFocused: PropTypes.bool,
+    placeholder: PropTypes.string,
+    isError: PropTypes.bool,
+    handleChange: PropTypes.func,
 };
 
 export default function TextInput({
@@ -27,15 +27,15 @@ export default function TextInput({
     autoComplete,
     required,
     isFocused,
-    handleChange,
     placeholder,
     isError,
+    handleChange,
 }) {
     const input = useRef();
 
     useEffect(() => {
         if (isFocused) {
-            TextInput.current.focus();
+            input.current.focus();
         }
     }, []);
 
